@@ -25,11 +25,15 @@ problem += x5 >= 0
 problem += x6 >= 0
 
 status = problem.solve()
-print(status)
+# print(status)
 
-print("El turno 1 tiene:", x1, "buses.")
-print("El turno 2 tiene:", x2, "buses.")
-print("El turno 3 tiene:", x3, "buses.")
-print("El turno 4 tiene:", x4, "buses.")
-print("El turno 5 tiene:", x5, "buses.")
-print("El turno 6 tiene:", x6, "buses.")
+print("El turno 1 tiene:", p.value(x1), "buses.")
+print("El turno 2 tiene:", p.value(x2), "buses.")
+print("El turno 3 tiene:", p.value(x3), "buses.")
+print("El turno 4 tiene:", p.value(x4), "buses.")
+print("El turno 5 tiene:", p.value(x5), "buses.")
+print("El turno 6 tiene:", p.value(x6), "buses.")
+
+print(
+    "Dando un total de:", sum([p.value(x) for x in [x1, x2, x3, x4, x5, x6]]), "buses"
+)
